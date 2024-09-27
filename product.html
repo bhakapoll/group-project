@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>PRODUCT</title>
+        <link rel="stylesheet" href="product.css">
+    </head>
+    <body>
+        <!--ling logo -->
+        <script src="scripts.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <!-- header home and menu-->
+        <header>
+            <h2 class="logo">sss</h2>
+            <nav class="navtgaion">
+                <a href="#" class="link">
+                    <span class="link-icon">
+                        <!-- icon -->
+                        <ion-icon name="home-outline"></ion-icon>
+                        <!-- /icon -->
+                    </span>
+                    <span class="link-title">Home</span>
+                </a>
+                <a href="#" class="link">
+                    <span class="link-icon">
+                        <!-- icon -->
+                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                        <!-- /icon -->
+                    </span>
+                    <span class="link-title">contact</span>
+                </a>
+                <a href="#" class="link">
+                    <span class="link-icon">
+                        <!-- icon -->
+                        <ion-icon name="person-outline"></ion-icon>
+                        <!-- /icon -->
+                    </span>
+                    <span class="link-title">Profile</span>
+                </a>
+                <a href="#" class="link">
+                    <span class="link-icon">
+                        <!-- icon -->
+                        <ion-icon name="exit-outline"></ion-icon>
+                        <!-- /icon -->
+                    </span>
+                    <span class="link-title">Logout</span>
+                </a>
+            </nav>
+        </header>
+        <main>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="file:///F:/672110049/954142/group%20project/image%20(project)/IMG_6264.WEBP" alt="Product 2">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">BASIC STUSSY HOODIE</h3>
+                    <div class="product-price">฿2,300</div>
+                    
+
+                    <div class="colors">
+                        <label>Colors</label>
+                        <div>
+                            <div class="option" data-color="silver">สีน้ำเงิน</div>
+                            <div class="option" data-color="lightgreen">สีเขียวอ่อน</div>
+                            <div class="option" data-color="gray">สีเทาอ่อน</div>
+                            <div class="option" data-color="lightblue">สีฟ้าอ่อน</div>
+                            <div class="option" data-color="white">สีขาว</div>
+                            
+                        </div>
+                    </div>
+                
+                    <div class="sizes">
+                        <label>Sizes</label>
+                        <div>
+                            <div class="option" data-size="S">S</div>
+                            <div class="option" data-size="M">M</div>
+                            <div class="option" data-size="L">L</div>
+                            <div class="option" data-size="XL">XL</div>
+                            <div class="option" data-size="2XL">2XL</div>
+                            
+                        </div>
+                    </div>
+                
+                    <div class="quantity">
+                        <button class="decrease">-</button>
+                        <input type="text" id="quantity" value="1" readonly>
+                        <button class="increase">+</button>
+                    </div>
+                
+                    <div class="add-to-cart">
+                        Buy Now
+                    </div>
+                    <script>
+                        // Function to handle selecting color options
+                        const colorOptions = document.querySelectorAll('.colors .option');
+                        colorOptions.forEach(option => {
+                            option.addEventListener('click', () => {
+                                // Remove "selected" class from other options
+                                colorOptions.forEach(opt => opt.classList.remove('selected'));
+                                // Add "selected" class to the clicked option
+                                option.classList.add('selected');
+                            });
+                        });
+                    
+                        // Function to handle selecting size options
+                        const sizeOptions = document.querySelectorAll('.sizes .option');
+                        sizeOptions.forEach(option => {
+                            option.addEventListener('click', () => {
+                                // Remove "selected" class from other options
+                                sizeOptions.forEach(opt => opt.classList.remove('selected'));
+                                // Add "selected" class to the clicked option
+                                option.classList.add('selected');
+                            });
+                        });
+                    
+                        // Handle increasing and decreasing quantity
+                        const quantityInput = document.getElementById('quantity');
+                        const increaseButton = document.querySelector('.increase');
+                        const decreaseButton = document.querySelector('.decrease');
+                    
+                        increaseButton.addEventListener('click', () => {
+                            let currentValue = parseInt(quantityInput.value);
+                            quantityInput.value = currentValue + 1;
+                        });
+                    
+                        decreaseButton.addEventListener('click', () => {
+                            let currentValue = parseInt(quantityInput.value);
+                            if (currentValue > 1) {
+                                quantityInput.value = currentValue - 1;
+                            }
+                        });
+                    </script>
+                </div>
+
+                
+            </div>
+            
+        </main>
+    </body>
+</html>
